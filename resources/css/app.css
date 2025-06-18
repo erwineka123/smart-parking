@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #f44336, #f44336, #fff);
+    color: white;
+} */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+/* 
+.text {
+    max-width: 80%;
+    min-width: 500px;
+} */
+
+.welcome-text {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 50px;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.description {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #ffffff;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.info-button {
+    display: inline-block;
+    margin-top: 30px;
+    background-color: #b73f3f;
+    color: white;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.logo-image {
+    width: 100%;
+    max-width: 50px;
+}
+
+.car-image {
+    width: 100%;
+    max-width: 800px;
+}
