@@ -30,9 +30,12 @@ class PerizinanController extends Controller
             'end_date' => 'required|date',
             'end_time' => 'required',
         ]);
-
-        $today = Carbon::today();
-        $diizinkan = $today->between($request->start_date, $request->end_date);
+        // $today = Carbon::today();
+        // $diizinkan = $today->between($request->start_date, $request->end_date);
+        $now = Carbon::now();
+        $start = Carbon::parse($request->start_date . ' ' . $request->start_time);
+        $end = Carbon::parse($request->end_date . ' ' . $request->end_time);
+        $diizinkan = $now->between($start, $end);
 
         Perizinan::create([
             'nama' => $request->nama,
