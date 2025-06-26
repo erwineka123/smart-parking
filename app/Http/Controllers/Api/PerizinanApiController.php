@@ -101,7 +101,8 @@ class PerizinanApiController extends Controller
     $today = $now->toDateString();
     $time = $now->format('H:i');
 
-    $dosens = \App\Models\Dosen::pluck('nama');
+    # Mendapatkan daftar nama dosen berdasarkan id
+    $dosens = \App\Models\Dosen::orderBy('id', 'asc')->pluck('nama')->toArray();
     $result = [];
 
     $index = 1;

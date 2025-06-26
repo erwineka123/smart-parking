@@ -54,7 +54,7 @@ class PerizinanController extends Controller
     $now = Carbon::now();
     $today = $now->toDateString();
     $time = $now->format('H:i');
-
+    
     $dosen = session('dosen_nama');
 
     if ($dosen) {
@@ -68,7 +68,8 @@ class PerizinanController extends Controller
 
         return view('pages.informasi', compact('izin', 'dosen', 'now'));
     } else {
-        $dosens = Dosen::pluck('nama');
+        # order by id dosen
+        $dosens = Dosen::orderBy('id', 'asc')->pluck('nama')->toArray();
 
         $izinList = [];
         foreach ($dosens as $nama) {

@@ -11,10 +11,11 @@ class DosenAuthController extends Controller
 {
     public function showLoginForm()
     {
-        $dosens = Dosen::all();
+        #order by id dosen
+        $dosens = Dosen::orderBy('id', 'asc')->get();
         return view('dosen.login', compact('dosens'));
     }
-
+    
     public function login(Request $request)
     {
         $request->validate([
